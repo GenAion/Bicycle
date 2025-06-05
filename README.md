@@ -39,8 +39,8 @@ A C++/OpenGL project that renders and animates a 3D bicycle with realistic gears
 - **User Interaction**  
   - Left-click to start/stop animation  
   - Mouse drag to rotate camera  
-  - Keyboard ↑/↓ (`W`/`S`) to raise/lower seat  
-  - Keyboard ←/→ (`A`/`D`) to steer handlebars ±45°  
+  - Keyboard ↑/↓ ( `W`/`S` ) to raise/lower seat  
+  - Keyboard ←/→ ( `A`/`D` ) to steer handlebars ±45°  
   - Smooth Phong‐lighting (ambient + diffuse + Blinn‐Phong specular)  
 
 - **Modular Code Organization**  
@@ -80,17 +80,26 @@ On Ubuntu/Debian, you can install dependencies via:
 ```bash
 sudo apt update
 sudo apt install build-essential libglfw3-dev libglew-dev libglm-dev freeglut3-dev
+On macOS (using Homebrew):
+
+bash
+复制
+编辑
+brew install glew glm freeglut
 On Windows, you can download precompiled binaries and set up include/lib paths in your Visual Studio project.
 
 Building & Running
 Clone this repository
+
 bash
 复制
 编辑
 git clone https://github.com/your-username/3D-Bicycle.git
 cd 3D-Bicycle
 Compile
+
 Linux/macOS (using pkg-config)
+
 bash
 复制
 编辑
@@ -106,6 +115,7 @@ g++ -std=c++11 \
   -o BicycleApp \
   $(pkg-config --cflags --libs glew freeglut glm)
 Linux/macOS (manual linking)
+
 bash
 复制
 编辑
@@ -121,6 +131,7 @@ g++ -std=c++11 \
   -o BicycleApp \
   -lGLEW -lGLU -lGL -lglut
 Windows (Visual Studio)
+
 Create a new Win32 Console project.
 
 Add all .cpp/.h files to the project.
@@ -134,6 +145,7 @@ Link against glew32s.lib, freeglut.lib, opengl32.lib.
 Define GLEW_STATIC in Preprocessor Definitions.
 
 Run
+
 bash
 复制
 编辑
@@ -234,9 +246,9 @@ Registers callbacks (display, reshape, mouseButton, mouseMotion, keyboard, tick)
 Enters glutMainLoop()
 
 Controls
-Left-click anywhere in the window to toggle animation (play/pause).
+Left‐click anywhere in the window to toggle animation (play/pause).
 
-Mouse drag (left-button + drag) to rotate the camera around the bicycle.
+Mouse drag (left‐button + drag) to rotate the camera around the bicycle.
 
 Keyboard
 
@@ -247,3 +259,4 @@ D / d: Turn handlebars right (steer angle +5°, up to +45°)
 W / w: Raise seatpost (up by 0.01, up to +0.12)
 
 S / s: Lower seatpost (down by 0.01, down to 0)
+
